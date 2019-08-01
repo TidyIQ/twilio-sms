@@ -14,13 +14,20 @@ const client = require("twilio")(ACCOUNT_SID, AUTH_TOKEN);
 
 /* Outbound SMS */
 app.post("/send", (req, res) => {
+  res.header("Content-Type", "application/json");
   client.messages
     .create({
-      body: req.query.message,
+      body: req.body.message,
       from: MY_PHONE_NUMBER,
-      to: req.query.to
+      to: req.body.to
     })
-    .then(message => console.log(message.sid));
+    .then(() => {
+      res.send(JSON.stringify({ success: true }));
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(JSON.stringify({ success: false }));
+    });
 });
 
 /* Launch server */
