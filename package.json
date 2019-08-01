@@ -9,13 +9,13 @@
   },
   "author": "Jake Clayton",
   "license": "ISC",
-  "homepage": "https://github.com/TidyIQ/twilio-sms#readme",
+  "homepage": "https://github.com/TidyIQ/eslint-config#readme",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/TidyIQ/twilio-sms.git"
+    "url": "git+ssh://git@github.com/TidyIQ/eslint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/TidyIQ/twilio-sms/issues"
+    "url": "https://github.com/TidyIQ/eslint-config/issues"
   },
   "type": "commonjs",
   "engines": {
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "eslint": "^6.1.0",
-    "twilio-sms-prettier": "^6.0.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2"
