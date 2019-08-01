@@ -2,18 +2,25 @@ require("dotenv").config();
 
 const express = require("express");
 const http = require("http");
-const MessagingResponse = require("twilio").twiml.MessagingResponse;
 
 const app = express();
 
-/* Inbound SMS route */
-app.post("/sms", (req, res) => {
-  const twiml = new MessagingResponse();
+/* Twilio client connection */
+const ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
+const AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
+const MY_PHONE_NUMBER = process.env.MY_PHONE_NUMBER;
 
-  twiml.message("The Robots are coming! Head for the hills!");
+const client = require("twilio")(ACCOUNT_SID, AUTH_TOKEN);
 
-  res.writeHead(200, { "Content-Type": "text/xml" });
-  res.end(twiml.toString());
+/* Outbound SMS */
+app.post("/send", (req, res) => {
+  client.messages
+    .create({
+      body: req.params.message,
+      from: MY_PHONE_NUMBER,
+      to: req.params.to
+    })
+    .then(message => console.log(message.sid));
 });
 
 /* Launch server */
