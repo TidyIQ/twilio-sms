@@ -1,0 +1,6 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": ["plugin:node/recommended", "plugin:prettier/recommended"]
+}

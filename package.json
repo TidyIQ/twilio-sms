@@ -1,0 +1,27 @@
+{
+  "name": "twilio-sms",
+  "version": "0.0.1",
+  "description": "SMS app for Twilio SMS numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Clayton",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "10.15.3"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "twilio": "^3.33.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2"
+  }
+}
