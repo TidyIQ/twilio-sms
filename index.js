@@ -16,9 +16,9 @@ const client = require("twilio")(ACCOUNT_SID, AUTH_TOKEN);
 app.post("/send", (req, res) => {
   client.messages
     .create({
-      body: req.params.message,
+      body: req.query.message,
       from: MY_PHONE_NUMBER,
-      to: req.params.to
+      to: req.query.to
     })
     .then(message => console.log(message.sid));
 });
