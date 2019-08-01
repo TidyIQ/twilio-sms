@@ -2,8 +2,11 @@ require("dotenv").config();
 
 const express = require("express");
 const http = require("http");
+const bodyParser = require("body-parser");
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 /* Twilio client connection */
 const ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
