@@ -26,7 +26,7 @@ app.post("/send", (req, res) => {
     })
     .then(resp => {
       console.log(resp);
-      res.send(JSON.stringify({ error: false, message: resp.message }));
+      res.send(JSON.stringify({ error: false, message: "Success" }));
     })
     .catch(err => {
       console.log(err);
