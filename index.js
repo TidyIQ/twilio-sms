@@ -24,12 +24,12 @@ app.post("/send", (req, res) => {
       from: MY_PHONE_NUMBER,
       to: req.body.to
     })
-    .then(() => {
-      res.send(JSON.stringify({ success: true }));
+    .then(resp => {
+      res.send(JSON.stringify({ error: false, message: resp.message }));
     })
     .catch(err => {
       console.log(err);
-      res.send(JSON.stringify({ success: false }));
+      res.send(JSON.stringify({ error: true, message: err.message }));
     });
 });
 
